@@ -11,7 +11,7 @@ const orm = {
     },
 
     newBurger(burgerName, cb) {
-        var queryString = `INSERT INTO burgers (burger_name) VALUES (${burgerName});`;
+        var queryString = `INSERT INTO burgers (burger_name) VALUES ("${burgerName}");`;
         connection.query(queryString, (err,result) => {
             if (err) {throw err}
             cb(result);
@@ -19,7 +19,7 @@ const orm = {
     },
 
     updateBurger(burgerId, cb) {
-        var queryString = `UPDATE burgers SET devoured = true WHERE id = ${burgerId};`;
+        var queryString = `UPDATE burgers SET devoured=true WHERE id="${burgerId}";`;
         connection.query(queryString, (err,result) => {
             if (err) {throw err}
             cb(result);

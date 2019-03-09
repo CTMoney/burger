@@ -12,13 +12,15 @@ router.get("/", (req, res) => {
 
 router.post("/api/burgers", (req,res) => {
 
+    console.log(req.body.burgerName + " controller event");
+    
     burger.new(req.body.burgerName, (result) => {
         res.json({ id: result.insertId })
     })
 
 });
 
-router.put("api/burgers/:id", (req,res) => {
+router.put("/api/burgers/:id", (req,res) => {
     
     burger.update(req.params.id, (result) => {
         return result.changedRows == 0 ? res.status(404).end() : res.status(200).end()

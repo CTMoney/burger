@@ -3,8 +3,9 @@ CREATE DATABASE burgers_db;
 USE burgers_db;
 
 CREATE TABLE burgers (
-    id int(11) NOT NULL AUTO_INCREMENT,
+    id INT NOT NULL AUTO_INCREMENT,
     burger_name VARCHAR(60) NOT NULL,
     devoured BOOL DEFAULT false,
+    createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY(id)
 )

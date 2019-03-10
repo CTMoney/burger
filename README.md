@@ -12,8 +12,6 @@ This is the only page. From here you can see a list of 'burgs as well as add new
 
 ---
 ### Difficulties
-    Surprisingly none so far - was able to set up ORM -> model -> controller fairly simply.
-    I'm anticipating the partial to be difficult.
+    Surprisingly was able to set up ORM -> model -> controller fairly simply.
+    Handlebars was a bit of a pain.
     
-
-    I am now starting to hate handlebars.

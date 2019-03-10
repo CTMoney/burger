@@ -6,10 +6,11 @@
     <div class="list-group">
 
         {{#each this.data}}
-       {{#if this.devoured "is" "false"}}
+        {{#unless this.devoured}}
         <button id="devour-btn" data-id="{{this.id}}"
-            class="list-group-item border-primary list-group-item-action">{{this.burger_name}}</button>
-        {{/if}} 
+            class="list-group-item border-primary list-group-item-action">{{this.burger_name}}
+        </button>
+        {{/unless}}
         {{/each}}
 
     </div>
@@ -21,5 +22,16 @@
         </div>
         <button type="submit" id="submit-btn" class="btn btn-primary btn-lg btn-block">Submit</button>
     </form>
+
+    <div class="mt-5">
+        <label class="display-4 mb-4" for="eatenburgers">Devoured Burgs</label>
+        <ul id="eatenburgers" class="list-group list-group-flush">
+            {{#each this.data}}
+            {{#if this.devoured}}
+            <li class="list-group-item">{{this.burger_name}}</li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
 
 </div>
